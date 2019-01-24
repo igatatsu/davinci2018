@@ -311,7 +311,7 @@ Circle.prototype = {
     let futureLocY = this.locY + distanceY;
 
     // 左右衝突判定
-    if (futureLocX < this.radius+1 || futureLocX > this.width-this.radius-1) {
+    if (futureLocX < this.radius || futureLocX > this.width-this.radius) {
       futureLocX -= distanceX;  // 進んだ分を戻す
       this.direction = 180 - this.direction; // 角度変更
       radian = this.direction * Math.PI / 180; // ラジアンへ変換
@@ -320,9 +320,9 @@ Circle.prototype = {
     }
 
     // 上下衝突判定
-    if (futureLocY < this.radius+1 || futureLocY > this.height-this.radius-1) {
+    if (futureLocY < this.radius || futureLocY > this.height-this.radius) {
       futureLocY -= distanceY;
-      this.direction = 180 - this.direction;
+      this.direction = 360 - this.direction;
       radian = this.direction * Math.PI / 180;
       distanceY = distance * Math.sin(radian);
       futureLocY += distanceY;
