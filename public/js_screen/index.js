@@ -301,24 +301,6 @@ Circle.prototype = {
       }
     }
     this.flag = 0;
-  },
-  normalizeDirection: direction => (direction + 360) % 360,
-  discriminateCommand: function (circles) {
-    let order;
-    if (this.hitCommand !== undefined) {
-      order = this.hitCommand.next().value;
-    } else {
-      order = this.command.next().value;
-    }
-    if (typeof order === "undefined") {
-      order = this.command.next().value;
-    }
-    if (typeof order.roll !== "undefined") {
-      this.roll(order.roll);
-    }
-    if (typeof order.go !== "undefined") {
-      this.go(this.speed, circles);
-    }
   },*/
   
   go: function (distance, circles) {
@@ -367,6 +349,25 @@ Circle.prototype = {
       }
     }
     this.flag = 0;
+  },
+  
+  normalizeDirection: direction => (direction + 360) % 360,
+  discriminateCommand: function (circles) {
+    let order;
+    if (this.hitCommand !== undefined) {
+      order = this.hitCommand.next().value;
+    } else {
+      order = this.command.next().value;
+    }
+    if (typeof order === "undefined") {
+      order = this.command.next().value;
+    }
+    if (typeof order.roll !== "undefined") {
+      this.roll(order.roll);
+    }
+    if (typeof order.go !== "undefined") {
+      this.go(this.speed, circles);
+    }
   },
   
   check: function (circles, futureLocX, futureLocY) {
