@@ -220,6 +220,10 @@ const Circle = function (data, field) {
   this.flag = 0;
   this.effectFlag = 0;
   this.checkCircle(field.circles);
+  
+  //change
+  this.deleteFlag = 0;
+  this.commandFlag = 1;
 };
 Circle.prototype = {
   hitCommand: undefined,
