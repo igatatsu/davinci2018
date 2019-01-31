@@ -219,11 +219,12 @@ const Circle = function (data, field) {
   this.direction = Math.floor(Math.random() * 360);
   this.flag = 0;
   this.effectFlag = 0;
-  this.checkCircle(field.circles);
   
   //change
   this.deleteFlag = 0;
   this.commandFlag = 1;
+  
+  this.checkCircle(field.circles);
 };
 Circle.prototype = {
   hitCommand: undefined,
