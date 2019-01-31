@@ -382,6 +382,9 @@ Circle.prototype = {
               this.hitCommand = this.hitEvent();
               this.flag++;
               this.effectFlag++;
+              
+              //change
+              this.deleteFlag++;
             }
           }
         });
