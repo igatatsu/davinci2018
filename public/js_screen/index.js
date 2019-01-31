@@ -412,6 +412,47 @@ Circle.prototype = {
     this.effectFlag = 0;
   }
 };
+
+//cnahge
+ killing: function (context, circles){
+    if(this.deleteFlag !== 0){
+      if(Math.floor(Math.random()*101)<25){
+        this.shadeDraw(context);
+        circles.splice(circles.indexOf(this), 1);
+      }
+    }
+    this.deleteFlag = 0;
+  },
+  konamiCommand: function(circles){
+    if(this.commandFlag === 0){
+      this.command.rewind();
+      if(this.command.next().value === {go: 10}){
+        if(this.command.next().value === {go: 10}){
+          if(this.command.next().value === {roll: 180}){
+            if(this.command.next().value === {roll: 180}){
+              if(this.command.next().value === {roll: -90}){
+                if(this.command.next().value === {roll: 90}){
+                  if(this.command.next().value === {roll: -90}){
+                    if(this.command.next().value === {roll: 90}){
+                      for(let i = 0; i < 4 ; i++){
+                        if(i = circles.indexOf(this)){
+                          continue;
+                        }
+                        circles.splice(i, 1);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      this.commandFlag = 0;
+    }
+  }
+};
+
 window.onload = function () {
   let url = location.href;
   let index = url.replace(/screen/g, "");
