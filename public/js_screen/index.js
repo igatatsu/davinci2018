@@ -412,7 +412,7 @@ Circle.prototype = {
     }
     this.effectFlag = 0;
   }
-};
+}
 
 //cnahge
  killing: function (context, circles){
