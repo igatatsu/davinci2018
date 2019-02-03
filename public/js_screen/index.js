@@ -406,13 +406,13 @@ Circle.prototype = {
         if (this.effectFlag !== 0) {
           context.fillStyle = 'white';
           context.font = "bold 18px Arial";
-          context.fillText("いてっ！", this.locX + ix * this.width + this.radius, this.locY + iy * this.height + this.radius);
+          context.fillText("ぐあぁっ！", this.locX + ix * this.width + this.radius, this.locY + iy * this.height + this.radius);
         }
       }
     }
     this.effectFlag = 0;
   }
-}
+},
 
 //cnahge
  killing: function (context, circles){
