@@ -411,7 +411,6 @@ Circle.prototype = {
       }
     }
     this.effectFlag = 0;
-  }
 },
 
 //cnahge
